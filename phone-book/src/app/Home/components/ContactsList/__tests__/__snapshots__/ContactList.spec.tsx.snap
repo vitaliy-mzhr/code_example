@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactList component test ContactList component renders with contacts 1`] = `
+<styled.div>
+  <Contact
+    deleteContact={[MockFunction]}
+    expanded={false}
+    id={1}
+    key="1"
+    name={
+      Object {
+        "first": "man",
+        "last": "awesome",
+      }
+    }
+    phone={Array []}
+    toggleContact={[MockFunction]}
+  />
+  <Contact
+    deleteContact={[MockFunction]}
+    expanded={false}
+    id={2}
+    key="2"
+    name={
+      Object {
+        "first": "man",
+        "last": "awesome",
+      }
+    }
+    phone={Array []}
+    toggleContact={[MockFunction]}
+  />
+</styled.div>
+`;
+
+exports[`ContactList component test ContactList component renders with contacts and dividers 1`] = `
+<styled.div>
+  <Contact
+    deleteContact={[MockFunction]}
+    expanded={false}
+    id={1}
+    key="1"
+    name={
+      Object {
+        "first": "man",
+        "last": "awesome",
+      }
+    }
+    phone={Array []}
+    toggleContact={[MockFunction]}
+  />
+  <ContactsDivider
+    divider="a"
+    key="a"
+  />
+  <Contact
+    deleteContact={[MockFunction]}
+    expanded={false}
+    id={2}
+    key="2"
+    name={
+      Object {
+        "first": "man",
+        "last": "awesome",
+      }
+    }
+    phone={Array []}
+    toggleContact={[MockFunction]}
+  />
+</styled.div>
+`;
+
+exports[`ContactList component test ContactList component renders with empty contacts 1`] = `
+<styled.div>
+  <EmptyPage />
+</styled.div>
+`;

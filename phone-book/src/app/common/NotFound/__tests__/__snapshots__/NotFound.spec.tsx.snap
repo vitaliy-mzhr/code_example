@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound renders without crashing 1`] = `
+<BaseLayout>
+  <styled.div>
+    <h2>
+      Page not found...
+    </h2>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <WithStyles(Button)
+        color="primary"
+        variant="contained"
+      >
+        Back to main page
+      </WithStyles(Button)>
+    </Link>
+  </styled.div>
+</BaseLayout>
+`;

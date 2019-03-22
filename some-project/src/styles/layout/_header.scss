@@ -1,0 +1,148 @@
+.site-header {
+    grid-area: header;
+    position: fixed;
+    height: $header-height;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+
+    &.is-flat {
+        .site-nav {
+            opacity: 0;
+        }
+
+        &:after {
+            opacity: 0;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+
+            .site-nav {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: $header-shadow;
+        opacity: 1;
+        transition: opacity $main-transition;
+    }
+
+    &__inner {
+        background-color: $header-bg;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        position: relative;
+        z-index: 10;
+        grid-template-columns:
+            minmax(210px, 1fr)
+            [nav-start] minmax(auto, 444px)
+            [nav-end] minmax(210px, 1fr);
+        grid-template-rows: auto;
+
+        @include mq($until: mobile) {
+            grid-template-columns:
+                1fr
+                [nav-start] 2fr
+                [nav-end] 1fr;
+        }
+    }
+
+    &__user {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 16px;
+
+        .profile-icon {
+            position: relative;
+            z-index: 20;
+            width: 30px;
+            height: 30px;
+            font-size: 22px;
+            overflow: hidden;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $primary-font-color;
+            -webkit-tap-highlight-color: transparent;
+
+            .img-holder {
+                width: 100%;
+                height: 100%;
+
+                div {
+                    height: 100%;
+                }
+            }
+
+            img {
+                @include imgCover;
+            }
+        }
+    }
+
+    &__sign-up-btn {
+        width: auto;
+        font-size: 16px;
+        text-transform: none;
+        line-height: 1em;
+        font-weight: 400;
+
+        @include mq($until: small) {
+            font-size: 12px;
+            padding-right: 5px;
+            padding-left: 5px;
+            text-transform: uppercase;
+            height: 30px;
+        }
+
+        svg {
+            font-size: 20px;
+
+            @include mq($until: mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__action-btn {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        padding-left: 16px;
+        -webkit-tap-highlight-color: transparent;
+
+        @include mq($from: mobile) {
+            display: none;
+        }
+
+        svg {
+            opacity: 0;
+            animation: fade-in $main-transition forwards;
+        }
+    }
+
+    &__back-action {
+        color: $primary-font-color;
+        transform: rotate(.25turn) translateY(3px);
+        display: flex;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component test Home component renders when loading 1`] = `
+<styled.div>
+  <Preloader />
+</styled.div>
+`;
+
+exports[`Home component test Home component renders without crashing 1`] = `
+<styled.div>
+  <ContactsList
+    contacts={Array []}
+    deleteContact={[MockFunction]}
+    toggleContact={[MockFunction]}
+  />
+</styled.div>
+`;

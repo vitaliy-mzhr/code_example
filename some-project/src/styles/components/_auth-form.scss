@@ -1,0 +1,75 @@
+.auth-form {
+    padding: 0 0 16px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+
+    @include mq($until: mobile) {
+        padding: 0;
+    }
+
+    &__input-row {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        height: 36px;
+
+        label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        input {
+            border: 1px solid #606060;
+
+            &::placeholder {
+                color: $lite-color;
+            }
+
+            &.is-invalid {
+                color: $secondary-font-color;
+                border-color: red;
+            }
+        }
+    }
+
+    &__btn {
+        text-transform: none;
+        font-size: 16px;
+
+        &:hover,
+        &:active {
+            color: $button-primary-color-a;
+            background-color: $button-primary-bg-a;
+        }
+    }
+
+    &__reset-password {
+        color: $secondary-font-color;
+        padding-left: 0;
+        font-style: italic;
+        display: inline-flex;
+        align-items: center;
+
+        &:hover {
+            text-decoration: underline;
+
+            .auth-form__arrow-icon {
+                transform: translate3d(4px, 0, 0) rotate(.75turn);
+            }
+        }
+    }
+
+    &__arrow-icon {
+        font-size: 6px;
+        transition: transform $main-transition;
+        margin-left: 4px;
+        transform: rotate(.75turn);
+    }
+
+    &__error-message {
+        color: red;
+        padding: 0;
+        margin: 0;
+    }
+}

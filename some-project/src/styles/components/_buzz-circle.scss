@@ -1,0 +1,53 @@
+.buzz-circle {
+    position: absolute;
+    display: flex;
+    border: $buzz-circle-border solid transparent;
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    left: -$buzz-circle-outer-edge + 1;
+    top: -$buzz-circle-outer-edge - 1;
+    width: calc(100% + (#{$buzz-circle-outer-edge} - #{$buzz-circle-border}) * 2 + #{$buzz-circle-border} * 2);
+    padding-bottom: calc(100% + (#{$buzz-circle-outer-edge} - #{$buzz-circle-border}) * 2);
+    height: 0;
+    opacity: 0;
+    transition: opacity .2s cubic-bezier(0, 0, .3, 1), transform .15s cubic-bezier(0, 0, .3, 1);
+    transform: scale3d(0, 0, 0);
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: cubic-bezier(0, 0, .3, 1);
+    pointer-events: none;
+    will-change: transform, opacity;
+
+    &.once {
+        animation-iteration-count: 3;
+    }
+}
+
+.buzz-circle--active {
+    position: absolute;
+    border: $buzz-circle-border solid #fff;
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    left: -$buzz-circle-outer-edge + 1;
+    top: -$buzz-circle-outer-edge - 1;
+    width: calc(100% + (#{$buzz-circle-outer-edge} - #{$buzz-circle-border}) * 2 + #{$buzz-circle-border} * 2);
+    padding-bottom: calc(100% + (#{$buzz-circle-outer-edge} - #{$buzz-circle-border}) * 2);
+    height: 0;
+    opacity: 0;
+    transition: opacity .15s cubic-bezier(0, 0, .3, 1), transform .15s cubic-bezier(0, 0, .3, 1);
+    transform: scale3d(.8, .8, .8);
+    will-change: transform, opacity;
+
+    &.is-active {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        box-shadow: 0 0 16px rgba(0, 0, 0, .5);
+
+        + .buzz-circle {
+            //animation-iteration-count: 0;
+            //animation-fill-mode: backwards;
+            visibility: hidden;
+        }
+    }
+}

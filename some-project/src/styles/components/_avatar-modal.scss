@@ -1,0 +1,48 @@
+.avatar-modal {
+    &__body {
+        @include mq($until: mobile) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+    }
+
+    &__container {
+        max-width: 579px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__footer-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include mq($until: mobile) {
+            justify-content: center;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        max-width: 100px;
+        font-size: 16px;
+
+        @include mq($until: mobile) {
+            padding: 0;
+        }
+
+        @include after-first(1) {
+            margin-left: 16px;
+        }
+
+        &-cancel {
+            &:hover,
+            &:active {
+                color: $button-primary-color;
+                background-color: $button-primary-bg;
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+@mixin ellipsis($width: 100%) {
+    width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin stretch() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin absoluteCenter() {
+    @include stretch;
+    margin: auto;
+}
+
+@mixin debug($withColor: null, $lineColor: #000) {
+    outline: 1px solid $lineColor !important;/* stylelint-disable-line */
+
+    @if $withColor {
+        background-color: rgba(0,255,0,.1) !important;/* stylelint-disable-line */
+    }
+}
+
+@mixin imgCover($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+    object-fit: cover;
+}
+
+@mixin placeGridItem($cols: 0, $rows: 0) {
+    $item: 0;
+
+    @for $i from 1 through $rows {
+        @for $j from 1 through $cols {
+
+            $item: $item + 1;
+
+            @include between($item, $item) {
+                grid-column-start: $j;
+                grid-column-end: $j + 1;
+                grid-row-start: $i;
+                grid-row-end: $i + 1;
+            }
+        }
+    }
+}
+
+@mixin onTouchDevices() {
+    @media (-moz-touch-enabled: 1), (pointer: coarse) {
+        @content;
+    }
+}
+
+@mixin onMouseDevices() {
+    @media (hover) {
+        @content;
+    }
+}
+
+@mixin placeMasonryGridItems($itemsInLine, $maxItems, $span) {
+    $evenLineLength: floor($itemsInLine / 2);
+    $currentOddIndex: 1;
+    $currentEvenIndex: $itemsInLine * 2 + 1;
+    $iterationSize: $itemsInLine * 3;
+
+    @while ($currentOddIndex < $maxItems) {
+        $start: $currentOddIndex;
+        $finish: $currentOddIndex + $itemsInLine - 1;
+
+        @if $currentOddIndex % 2 == 0 {
+            @include even-between($start, $finish) {
+                grid-row-end: span $span;
+            }
+        } @else {/* stylelint-disable-line */
+            @include odd-between($start, $finish) {
+                grid-row-end: span $span;
+            }
+        }
+
+        $currentOddIndex: $currentOddIndex + $iterationSize;
+    }
+
+    @while ($currentEvenIndex < $maxItems) {
+        $start: $currentEvenIndex;
+        $finish: $currentEvenIndex + $evenLineLength - 1;
+
+        @include between($start, $finish) {
+            grid-row-end: span $span;
+        }
+
+        $currentEvenIndex: $currentEvenIndex + $iterationSize;
+    }
+}

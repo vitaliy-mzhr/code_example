@@ -1,0 +1,21 @@
+.user-profile-modal {
+    &__body {
+        display: flex;
+        flex-direction: column;
+
+        @include mq($until: mobile) {
+            justify-content: center;
+        }
+    }
+
+    &__footer {
+        line-height: 23px;
+        color: $lite-color;
+        font-size: 14px;
+
+        @include mq($until: small) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+}

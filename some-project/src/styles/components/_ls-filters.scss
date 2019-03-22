@@ -1,0 +1,24 @@
+.ls-filters {
+    font-size: 14px;
+    line-height: 21px;
+
+    @include mq($until: mobile) {
+        display: none;
+    }
+
+    &__group {
+        margin: 4px 0 12px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 5px;
+        line-height: 16px;
+
+        &.is-large {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .choice {
+        min-height: 32px;
+    }
+}

@@ -1,0 +1,24 @@
+.collection-sidebar {
+    margin-bottom: 16px;
+    position: relative;
+
+    @include mq($until: mobile) {
+        margin-bottom: 0;
+        padding-bottom: 10px;
+    }
+
+    .accordion,
+    .rc-collapse {
+        margin-top: 18px;
+    }
+
+    .accordion__panel {
+        @include last-child {
+            border-bottom: none;
+        }
+    }
+
+    .accordion__panel-head {
+        font-size: $base-font-size;
+    }
+}

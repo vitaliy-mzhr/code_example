@@ -1,0 +1,64 @@
+.account-menu {
+    flex: 1;
+    margin-top: 16px;
+
+    hr {
+        width: auto;
+        border-bottom: 1px solid rgba(96, 96, 96, .4);
+        margin: 10px 0 0 0;
+    }
+
+    @include mq($until: mobile) {
+        display: none;
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &__collapse {
+        border-bottom: 1px solid rgba(96, 96, 96, .4);
+    }
+
+    &__item {
+        margin-left: 16px;
+        margin-bottom: 13px;
+
+        @include first-child {
+            margin-top: 3px;
+        }
+
+        @include last-child {
+            margin-bottom: 19px;
+        }
+    }
+
+    &__item,
+    &__title {
+        display: block;
+        color: $secondary-font-color;
+        transition: transform $main-transition;
+        transform-origin: left;
+
+        &.is-active {
+            color: $primary-font-color;
+            font-weight: 700;
+            transform: translate3d(12px, 0, 0);
+            pointer-events: none;
+
+            &:before {
+                left: -12px;
+                top: 50%;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border: 6px solid transparent;
+                border-left-color: $primary-font-color;
+                margin-top: -6px;
+                margin-right: 8px;
+            }
+        }
+    }
+}

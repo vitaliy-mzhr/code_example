@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeStyles applied correctly 1`] = `
+.c0 {
+  width: 100%;
+}
+
+.c0 .app-bar {
+  min-height: 4.5rem;
+}
+
+.c0 .back-button {
+  color: #fff;
+}
+
+.c0 .home-button {
+  margin-left: -12px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.c0 .search-button {
+  color: #fff;
+}
+
+.c0 .flex-grow {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .search-container {
+  position: relative;
+  border-radius: 4px;
+  margin-left: 0;
+  background-color: rgba(256,256,256,.15);
+}
+
+.c0 .search-container:hover {
+  background-color: rgba(256,256,256,.25);
+}
+
+.c0 .search-icon {
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  pointer-events: none;
+  width: 4rem;
+}
+
+.c0 .search-input {
+  color: inherit;
+  padding: .1rem .1rem .1rem 4.1rem;
+}
+
+.c0 .search-input input {
+  width: 10rem;
+}
+
+.c0 .search-input.add-transition input {
+  width: 10rem;
+  -webkit-transition: width .15s ease-in;
+  transition: width .15s ease-in;
+}
+
+.c0 .search-input.add-transition input:focus {
+  width: 15rem;
+}
+
+@media all and (max-width:768px) {
+  .c0 .app-bar {
+    padding: 0 .7rem;
+    min-height: 4.05rem;
+  }
+
+  .c0 .title {
+    display: none;
+  }
+
+  .c0 .search-input input {
+    width: 7rem;
+  }
+
+  .c0 .search-input.add-transition input {
+    width: 7rem;
+  }
+
+  .c0 .search-input.add-transition input:focus {
+    width: 10rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`NavBarStyles applied correctly 1`] = `
+.c0 {
+  width: 100%;
+}
+
+.c0 .app-bar {
+  min-height: 4.5rem;
+}
+
+.c0 .back-button {
+  color: #fff;
+}
+
+.c0 .home-button {
+  margin-left: -12px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.c0 .search-button {
+  color: #fff;
+}
+
+.c0 .flex-grow {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .search-container {
+  position: relative;
+  border-radius: 4px;
+  margin-left: 0;
+  background-color: rgba(256,256,256,.15);
+}
+
+.c0 .search-container:hover {
+  background-color: rgba(256,256,256,.25);
+}
+
+.c0 .search-icon {
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  pointer-events: none;
+  width: 4rem;
+}
+
+.c0 .search-input {
+  color: inherit;
+  padding: .1rem .1rem .1rem 4.1rem;
+}
+
+.c0 .search-input input {
+  width: 10rem;
+}
+
+.c0 .search-input.add-transition input {
+  width: 10rem;
+  -webkit-transition: width .15s ease-in;
+  transition: width .15s ease-in;
+}
+
+.c0 .search-input.add-transition input:focus {
+  width: 15rem;
+}
+
+@media all and (max-width:768px) {
+  .c0 .app-bar {
+    padding: 0 .7rem;
+    min-height: 4.05rem;
+  }
+
+  .c0 .title {
+    display: none;
+  }
+
+  .c0 .search-input input {
+    width: 7rem;
+  }
+
+  .c0 .search-input.add-transition input {
+    width: 7rem;
+  }
+
+  .c0 .search-input.add-transition input:focus {
+    width: 10rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

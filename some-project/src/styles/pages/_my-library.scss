@@ -1,0 +1,48 @@
+.my-library {
+    padding: 32px 16px 72px;
+    min-height: 100%;
+
+    @include mq($until: mobile) {
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 56px;
+        background-color: #fff;
+    }
+
+    &__content {
+        h1 {
+            line-height: 30px;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 16px;
+
+            @include mq($until: desktop) {
+                margin-left: 0;
+            }
+
+            @include mq($until: mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__group {
+        animation: fade-in $main-transition;
+
+        + .my-library__group {
+            margin-top: 40px;
+        }
+    }
+
+    &__group-list {
+        display: grid;
+        grid-gap: 0 16px;
+        grid-auto-flow: column;
+    }
+
+    &__list-item {
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+}

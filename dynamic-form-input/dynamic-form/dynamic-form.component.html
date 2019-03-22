@@ -1,0 +1,79 @@
+<ng-content select="form-title"></ng-content>
+
+<form [formGroup]="formGroup" #form="ngForm" (ngSubmit)="submitHandler()">
+
+  <ng-template bfDynamicFieldDef type="text" let-entity="entity" let-group="group">
+    <bf-dynamic-input [entity]="entity" [group]="group"></bf-dynamic-input>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="select" let-entity="entity" let-group="group">
+    <bf-dynamic-select [entity]="entity" [group]="group"></bf-dynamic-select>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="group" let-entity="entity" let-group="group"
+               let-availableFields="availableFields">
+    <bf-dynamic-group [entity]="entity" [group]="group" [availableFields]="availableFields">
+    </bf-dynamic-group>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="datepicker" let-entity="entity" let-group="group">
+    <bf-dynamic-date-picker [entity]="entity" [group]="group"></bf-dynamic-date-picker>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="phone" let-entity="entity" let-group="group">
+    <bf-dynamic-phone [entity]="entity" [group]="group"></bf-dynamic-phone>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="autocomplete" let-entity="entity" let-group="group">
+    <bf-dynamic-autocomplete [entity]="entity" [group]="group"></bf-dynamic-autocomplete>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="textarea" let-entity="entity" let-group="group">
+    <bf-dynamic-textarea [entity]="entity" [group]="group"></bf-dynamic-textarea>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="checkbox-group" let-entity="entity" let-group="group">
+    <bf-dynamic-checkbox-group [entity]="entity" [group]="group"></bf-dynamic-checkbox-group>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="checkbox" let-entity="entity" let-group="group">
+    <bf-dynamic-checkbox [entity]="entity" [group]="group"></bf-dynamic-checkbox>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="radio" let-entity="entity" let-group="group">
+    <bf-dynamic-radio [entity]="entity" [group]="group"></bf-dynamic-radio>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="check-input-group" let-entity="entity" let-group="group">
+    <bf-dynamic-check-input-group [entity]="entity" [group]="group"></bf-dynamic-check-input-group>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="checkbox-currency" let-entity="entity" let-group="group">
+    <bf-dynamic-checkbox-currency [entity]="entity" [group]="group"></bf-dynamic-checkbox-currency>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="currency" let-entity="entity" let-group="group">
+    <bf-dynamic-currency [entity]="entity" [group]="group"></bf-dynamic-currency>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="table" let-entity="entity" let-group="group">
+    <bf-dynamic-table-input [entity]="entity" [group]="group"></bf-dynamic-table-input>
+  </ng-template>
+
+  <ng-template bfDynamicFieldDef type="file" let-entity="entity" let-group="group">
+    <bf-dynamic-file-upload [entity]="entity" [group]="group"></bf-dynamic-file-upload>
+  </ng-template>
+
+  <ng-content select="bfDynamicFieldDef"></ng-content>
+
+  <ng-container *ngIf="availableFields">
+    <ng-container *ngFor="let entity of formEntity.controlEntities"
+                  bfDynamicField
+                  [availableFields]="availableFields"
+                  [entity]="entity"
+                  [group]="formGroup">
+    </ng-container>
+  </ng-container>
+
+  <ng-content></ng-content>
+</form>

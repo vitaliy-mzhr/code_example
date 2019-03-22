@@ -1,0 +1,103 @@
+.collection {
+    padding: 16px 24px 50px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include mq($until: mobile) {
+        padding: 0 0 50px;
+    }
+
+    @include mq($until: mobile) {
+        grid-template-columns: 1fr 1fr;
+
+        &.wide-mode {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        .outfit-card__btn {
+            @include onMouseDevices {
+                @include mq($until: tablet, $from: mobile) {
+                    font-size: 12px;
+                    padding: 4px 6px;
+
+                    &.is-interacted {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            span {
+                @include mq($until: tablet, $from: mobile) {
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+
+    &__loop-me-in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $lite-color;
+        padding: 0 10px;
+
+        @include mq($until: desktop, $from: mobile) {
+            padding: 0 5px;
+        }
+
+        @include mq($until: mobile) {
+            grid-column: 1 / -1;
+            padding: 20px;
+            margin: 0 5px;
+            min-height: 250px;
+        }
+
+        .loop-me-in__form {
+            @include mq($until: desktop, $from: mobile) {
+                flex-direction: column;
+            }
+
+            input {
+                @include mq($until: desktop, $from: mobile) {
+                    height: 25px;
+                }
+            }
+        }
+
+        .loop-me-in__btn {
+            flex-shrink: 1;
+
+            @include mq($until: desktop, $from: mobile) {
+                height: 25px;
+                width: auto;
+            }
+        }
+
+        .loop-me-in__title {
+            @include mq($until: desktop, $from: mobile) {
+                font-size: 12px;
+                margin-bottom: 6px;
+                line-height: 14px;
+            }
+
+            @include mq($until: tablet, $from: mobile) {
+                text-align: center;
+            }
+        }
+
+        .loop-me-in__description {
+            @include mq($until: desktop, $from: mobile) {
+                font-size: 12px;
+                line-height: 14px;
+                margin-bottom: 5px;
+            }
+
+            @include mq($until: tablet, $from: mobile) {
+                display: none;
+            }
+        }
+    }
+}

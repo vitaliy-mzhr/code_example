@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component test NavBar component renders correctly 1`] = `
+<styled.div>
+  <WithStyles(AppBar)
+    position="static"
+  >
+    <WithStyles(Toolbar)
+      className="app-bar"
+    >
+      <NavButton
+        clearInput={[MockFunction]}
+        showBackArrow={false}
+      />
+      <WithStyles(Typography)
+        className="title"
+        color="inherit"
+        noWrap={true}
+        variant="title"
+      >
+        Phone-book app
+      </WithStyles(Typography)>
+      <div
+        className="flex-grow"
+      />
+      <WithStyles(Tooltip)
+        title="Search contact"
+      >
+        <Link
+          replace={false}
+          to="/search"
+        >
+          <WithStyles(IconButton)
+            className="search-button"
+          >
+            <pure(SearchIcon) />
+          </WithStyles(IconButton)>
+        </Link>
+      </WithStyles(Tooltip)>
+    </WithStyles(Toolbar)>
+  </WithStyles(AppBar)>
+</styled.div>
+`;
+
+exports[`NavBar component test NavBar component renders correctly with different props 1`] = `
+<styled.div>
+  <WithStyles(AppBar)
+    position="static"
+  >
+    <WithStyles(Toolbar)
+      className="app-bar"
+    >
+      <NavButton
+        clearInput={[MockFunction]}
+        showBackArrow={true}
+      />
+      <WithStyles(Typography)
+        className="title"
+        color="inherit"
+        noWrap={true}
+        variant="title"
+      >
+        Phone-book app
+      </WithStyles(Typography)>
+      <div
+        className="flex-grow"
+      />
+      <div
+        className="search-container"
+      >
+        <div
+          className="search-icon"
+        >
+          <pure(SearchIcon) />
+        </div>
+        <WithStyles(Input)
+          autoFocus={true}
+          className="search-input add-transition"
+          disableUnderline={true}
+          onChange={[MockFunction]}
+          onClick={[MockFunction]}
+          placeholder="Search…"
+          value="1"
+        />
+      </div>
+    </WithStyles(Toolbar)>
+  </WithStyles(AppBar)>
+</styled.div>
+`;

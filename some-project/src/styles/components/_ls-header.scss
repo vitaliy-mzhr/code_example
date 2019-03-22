@@ -1,0 +1,94 @@
+.ls-header {
+    overflow-wrap: break-word;
+
+    @include mq($until: mobile) {
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding-top: 16px;
+        z-index: 10;
+        padding-bottom: 8px;
+
+        &.with-border {
+            border-bottom: 1px solid $lite-color;
+        }
+    }
+
+    &.with-btn {
+        h1 {
+            font-size: 20px;
+            padding: 0 30px;
+            line-height: 22px;
+
+            @include mq($until: mobile) {
+                line-height: 20px;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 26px;
+        margin: 0;
+        line-height: 28px;
+        padding: 0 8px;
+        text-align: center;
+
+        @include mq($until: mobile) {
+            font-size: 19px;
+        }
+    }
+
+    h3 {
+        margin: 2px 0 0;
+        font-size: 14px;
+        text-align: center;
+        line-height: 21px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $secondary-font-color;
+    }
+
+    @include mq($until: mobile) {
+        + hr {
+            width: 90px;
+            margin: 62px auto 12px;
+
+            &.left-sidebar__hr--high {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    &__back-btn {
+        transform: rotate(.25turn);
+        font-size: 12px;
+        color: $primary-font-color;
+        position: absolute;
+        left: 16px;
+        top: 22px;
+        cursor: pointer;
+
+        @include mq($from: mobile) {
+            display: none;
+        }
+    }
+
+    &__save-btn,
+    &__add-btn {
+        font-size: 18px;
+        color: $primary-font-color;
+        position: absolute;
+        right: 10px;
+        top: 19px;
+        display: flex;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+
+        svg {
+            animation: fade-in $main-transition;
+        }
+    }
+}

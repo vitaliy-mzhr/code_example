@@ -1,0 +1,54 @@
+.outfit-stylist {
+    font-family: $cursive-font;
+    font-weight: 700;
+    font-size: 22px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: rgb(0,0,0);
+    color: var(--outfit-font-color);
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    height: 50px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0s cubic-bezier(0, 0, .3, 1);
+
+    span,
+    a {
+        color: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    span {
+        font-size: 16px;
+    }
+
+    a {
+        font-size: inherit;
+    }
+
+    svg {
+        margin-right: 5px;
+        font-size: .9em;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 5px;
+        }
+    }
+
+    &.is-visible {
+        opacity: 1;
+        transition-duration: .3s;
+    }
+}

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactsDivider component renders without crashing 1`] = `
+<styled.div>
+  <WithStyles(Paper)
+    className="divider"
+  >
+    <WithStyles(Typography)
+      className="title"
+      component="p"
+      variant="headline"
+    >
+      TEST
+    </WithStyles(Typography)>
+  </WithStyles(Paper)>
+</styled.div>
+`;

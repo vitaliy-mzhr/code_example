@@ -1,0 +1,103 @@
+.home-user-flow {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq($until: mobile) {
+        flex-direction: column;
+    }
+
+    &__item,
+    &__arrow {
+        &.is-entered {
+            animation: slide-up .6s cubic-bezier(0, 0, .3, 1) forwards;
+        }
+
+        @for $i from 1 through 4 {
+            $delay: $i * 150;
+
+            @include between($i + 1, $i + 1) {
+                animation-delay: #{$delay}ms;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        padding: 0 8px;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+
+        @include mq($until: mobile) {
+            margin: 17px 0;
+        }
+
+        img {
+            max-height: 45px;
+            width: 100%;
+
+            @include mq($until: mobile) {
+                max-height: 35px;
+            }
+        }
+
+        h3 {
+            font-size: 16px;
+            color: $secondary-font-color;
+            margin: 20px 0 12px;
+            text-align: center;
+            line-height: 24px;
+
+            @include mq($until: mobile) {
+                margin: 15px 8px 8px;
+            }
+        }
+
+        p {
+            margin: 0;
+            max-width: 270px;
+            text-align: center;
+            line-height: 24px;
+
+            @include mq($until: mobile) {
+                max-width: none;
+            }
+
+            a {
+                text-decoration: underline;
+                color: $secondary-font-color;
+            }
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+
+        @include mq($until: mobile) {
+            display: none;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 64px;
+            background-color: $lite-color;
+        }
+
+        &:before {
+            transform: rotateZ(-20deg);
+            transform-origin: bottom;
+        }
+
+        &:after {
+            transform: rotateZ(20deg);
+            transform-origin: top;
+        }
+    }
+}

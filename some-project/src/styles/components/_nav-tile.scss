@@ -1,0 +1,119 @@
+.nav-tile {
+    white-space: normal;
+    display: inline-flex;
+    width: 40vw;
+    height: 40vw;
+    position: relative;
+    color: white;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    font-weight: 700;
+    text-shadow: 0 0 16px rgba(0, 0, 0, .8);
+    scroll-snap-align: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    &:before {
+        @include stretch;
+        content: '';
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .2s cubic-bezier(0, 0, .3, 1);
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    &.is-active {
+        &:before {
+            opacity: 1;
+        }
+
+        .nav-tile__title {
+            @include ellipsis(110px);
+            transform: translateY(calc(-35vw / 2.689474));
+            font-size: 14px;
+            opacity: .6;
+            line-height: 20px;
+            padding-bottom: 10px;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    &__title {
+        opacity: 1;
+        font-size: 20px;
+        position: absolute;
+        line-height: 30px;
+        transition:
+            transform $main-transition,
+            opacity $main-transition;
+        will-change: transform;
+
+        &:after {
+            @include absoluteCenter;
+            content: '';
+            width: 50px;
+            height: 2px;
+            top: auto;
+            bottom: 5px;
+            background: #fff;
+            pointer-events: none;
+            display: none;
+        }
+    }
+
+    &__img {
+        @include imgCover;
+    }
+
+    &__menu {
+        animation: fade-in $main-transition;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        line-height: 16px;
+        font-size: 14px;
+        top: 50px;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        overflow-y: auto;
+
+        a {
+            color: inherit;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+    }
+
+    .scroll-tip-icon {
+        @include absoluteCenter;
+        pointer-events: none;
+        bottom: 5px;
+        top: auto;
+        margin: auto;
+        font-size: 7px;
+        color: #fff;
+        opacity: 0;
+        animation: bounce 2000ms cubic-bezier(0, 0, .3, 1);
+        transition: opacity $main-transition;
+
+        &.is-visible {
+            opacity: 1;
+        }
+    }
+
+    &__close-btn {
+        animation: fade-in $main-transition;
+        position: absolute;
+        top: 15px;
+        right: 13px;
+        color: rgba(255, 255, 255, .6);
+        font-size: 14px;
+    }
+}

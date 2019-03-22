@@ -1,0 +1,45 @@
+.home-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-auto-rows: 48px;
+        grid-gap: 32px;
+
+        @include mq($until: tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__item {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        .img-holder {
+            height: 100%;
+
+            @include mq($until: tablet) {
+                height: 40px;
+            }
+
+            @include mq($until: mobile) {
+                height: 20px;
+            }
+
+            > div {
+                height: 100%;
+                pointer-events: none;
+            }
+        }
+
+        img {
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+}

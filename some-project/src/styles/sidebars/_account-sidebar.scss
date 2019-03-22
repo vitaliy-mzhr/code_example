@@ -1,0 +1,29 @@
+.account-sidebar {
+    @include mq($from: mobile) {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    @include mq($until: mobile) {
+        &:not(.is-library) {
+            padding-top: 59px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $secondary-font-color;
+        }
+    }
+
+    &.is-library {
+        .account-avatar {
+            @include mq($until: mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__header {
+        &.with-border {
+            border-bottom-color: $secondary-font-color;
+        }
+    }
+}

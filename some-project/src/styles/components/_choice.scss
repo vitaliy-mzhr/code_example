@@ -1,0 +1,66 @@
+.choice {
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    input {
+        display: none;
+
+        &:checked {
+            + label {
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $ternary-color;
+        cursor: pointer;
+        font-size: 11px;
+        color: $ternary-color;
+        flex-shrink: 0;
+        background-size: contain;
+
+        &.with-color,
+        &.with-icon {
+            font-size: 13px;
+        }
+
+        &.with-icon {
+            color: #000;
+        }
+
+        &.with-color {
+            @supports (animation-name: test) {
+                color: #efadad;
+
+                svg {
+                    mix-blend-mode: difference;
+                }
+            }
+        }
+
+        + span {
+            margin-left: 12px;
+        }
+
+        svg {
+            opacity: 0;
+            transition: opacity $main-transition;
+            transition-duration: .15s;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+}

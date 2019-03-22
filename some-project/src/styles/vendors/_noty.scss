@@ -1,0 +1,41 @@
+/* stylelint-disable selector-max-id */
+#noty_layout__topRight {
+    top: 60px;
+    -webkit-tap-highlight-color: transparent;
+
+    .noty_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &.noty_type__info {
+            background-color: $primary-font-color;
+        }
+    }
+
+    .noty_buttons {
+        display: flex;
+        align-items: center;
+        padding: 0 10px 0 0;
+
+        button {
+            background-color: #fff;
+            border: 1px solid #fff;
+
+            &:hover {
+                @include onMouseDevices {
+                    background-color: transparent;
+                }
+
+                @include onTouchDevices {
+                    color: $button-primary-color;
+                }
+            }
+
+            + button {
+                margin-left: 2px;
+            }
+        }
+    }
+}
+/* stylelint-enable */

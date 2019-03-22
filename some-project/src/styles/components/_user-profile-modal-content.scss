@@ -1,0 +1,83 @@
+.user-profile-modal-content {
+    padding: 16px 0;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+    max-width: 372px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include mq($until: mobile) {
+        padding: 0;
+    }
+
+    &__input-row {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        height: 36px;
+
+        label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        span {
+            padding: 0 12px;
+            display: inline-flex;
+            align-self: center;
+        }
+
+        input {
+            border: 1px solid #606060;
+
+            &::placeholder {
+                color: $lite-color;
+            }
+
+            &.is-invalid {
+                color: $secondary-font-color;
+                border-color: red;
+            }
+        }
+    }
+
+    &__btn-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 16px;
+        padding-left: 100px;
+    }
+
+    &__btn {
+        text-transform: none;
+        font-size: 16px;
+
+        @include mq($until: mobile) {
+            padding: 0;
+        }
+
+        &-cancel {
+            &:hover,
+            &:active {
+                color: $button-primary-color;
+                background-color: $button-primary-bg;
+            }
+        }
+
+        &-update {
+            &:hover,
+            &:active {
+                color: $button-primary-color-a;
+                background-color: $button-primary-bg-a;
+            }
+        }
+    }
+
+    &__error-message {
+        color: red;
+        padding: 0;
+        margin: 15px 0 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,127 @@
+.tabs {
+    &__header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        position: relative;
+    }
+
+    &__names {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        height: $tab-header-height;
+        border-bottom: 1px solid $secondary-font-color;
+
+        @include mq($until: small) {
+            justify-content: space-around;
+        }
+    }
+
+    &__subheader {
+        height: $tab-subheader-height;
+        display: flex;
+        align-items: center;
+    }
+
+    &__matches {
+        display: flex;
+        align-items: center;
+        font-style: italic;
+        font-size: 12px;
+
+        svg {
+            margin-right: 5px;
+            font-size: .9em;
+        }
+    }
+
+    &__filters {
+        border-bottom: 1px solid $secondary-font-color;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__body {
+        position: relative;
+    }
+
+    &__name {
+        cursor: pointer;
+        text-transform: uppercase;
+        align-items: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        line-height: 1em;
+        -webkit-tap-highlight-color: transparent;
+
+        @include after-first(1) {
+            margin-left: 20px;
+
+            @include mq($until: small) {
+                margin-left: 12px;
+            }
+        }
+
+        @include onMouseDevices {
+            &:hover {
+                font-weight: 700;
+                color: $primary-font-color;
+            }
+        }
+
+        &.is-active {
+            font-weight: 700;
+            color: $primary-font-color;
+
+            .tabs__name-underline {
+                &:after {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+
+        svg,
+        img {
+            font-size: 15px;
+            grid-column: 1;
+            grid-row: 1;
+
+            @include mq($until: small) {
+                font-size: 14px;
+            }
+
+            + span {
+                margin-left: 8px;
+                grid-column: 2;
+                grid-row: 1;
+
+                @include mq($until: small) {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    &__name-underline {
+        height: 2px;
+        align-self: self-end;
+        justify-self: stretch;
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        position: relative;
+        overflow: hidden;
+        pointer-events: none;
+
+        &:after {
+            @include stretch;
+            content: '';
+            transform: translate3d(0, 100%, 0);
+            background-color: $primary-font-color;
+            transition: transform .5s cubic-bezier(.165, .84, .44, 1);
+            will-change: transform;
+        }
+    }
+}

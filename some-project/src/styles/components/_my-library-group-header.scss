@@ -1,0 +1,38 @@
+.my-library-group-header {
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+        font-size: 18px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    &__flex-center {
+        display: flex;
+        align-items: center;
+    }
+
+    &__mode-btn {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1px 2px;
+        width: 16px;
+        height: 14px;
+        margin-left: 13px;
+        cursor: pointer;
+
+        &.is-active {
+            span {
+                background-color: $secondary-font-color;
+            }
+        }
+
+        span {
+            background-color: $lite-color;
+        }
+    }
+}

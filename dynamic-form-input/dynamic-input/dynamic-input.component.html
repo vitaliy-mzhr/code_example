@@ -1,0 +1,5 @@
+<bf-form-field>
+  <bf-label>{{entity?.label}}</bf-label>
+  <input type="text" bfInput [formControl]="group.get(entity.fieldPath)" [required]="entity?.required">
+  <fa bfValidationSuffix name="check-circle" size="lg"></fa>
+</bf-form-field>

@@ -1,0 +1,7 @@
+export default {
+    LOOP_ME_IN: 'LOOP_ME_IN',
+    SIGN_UP: 'SIGN_UP',
+    LOGIN: 'LOGIN',
+    CHANGE_EMAIL: 'CHANGE_EMAIL',
+    CHANGE_PASSWORD: 'CHANGE_PASSWORD'
+};

@@ -1,0 +1,41 @@
+.hamburger-btn {
+    align-self: center;
+    justify-self: start;
+    margin-left: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+
+    @include mq($from: mobile) {
+        display: none;
+    }
+
+    &__line {
+        width: 24px;
+        height: 2px;
+        background-color: $primary-font-color;
+        display: block;
+        transition: all $main-transition;
+        will-change: transfrom;
+    }
+
+    &.is-active {
+        .hamburger-btn__line {
+            @include middle(3) {
+                opacity: 0;
+            }
+
+            @include first-child {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            @include last-child {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}

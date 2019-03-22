@@ -1,0 +1,46 @@
+.stylists-sidebar {
+    padding-bottom: 13px;
+
+    @include mq($from: mobile) {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 16px;
+    }
+
+    &__collections {
+        height: 100%;
+        position: relative;
+
+        @include mq($until: mobile) {
+            display: none;
+        }
+    }
+
+    &__collections-count {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    &__collections-list {
+        line-height: 1.2;
+        font-size: 14px;
+        position: absolute;
+        padding-right: 16px;
+        top: 41px;
+        right: -16px;
+        left: 0;
+        bottom: 20px;
+
+        a {
+            color: $lite-color;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: transform $main-transition;
+
+            &:hover {
+                transform: translate3d(8px, 0, 0);
+                font-weight: 700;
+            }
+        }
+    }
+}

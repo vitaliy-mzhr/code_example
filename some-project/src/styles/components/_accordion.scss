@@ -1,0 +1,54 @@
+.accordion {
+    &__panel {
+        border-bottom: 1px solid rgba(96, 96, 96, .4);
+
+        &.is-active {
+            .accordion__panel-head {
+                &:before {
+                    transform: scaleY(0) translateX(-7px);
+                }
+            }
+        }
+    }
+
+    &__panel-head {
+        cursor: pointer;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-right: 20px;
+
+        > span {
+            @include ellipsis;
+            font-weight: 700;
+        }
+
+        &:before,
+        &:after {
+            @include absoluteCenter;
+            content: '';
+            background-color: $secondary-font-color;
+            left: auto;
+        }
+
+        &:before {
+            transition: transform $main-transition;
+            transform: scaleY(1) translateX(-7px);
+            height: 14px;
+            width: 2px;
+            will-change: transform;
+        }
+
+        &:after {
+            width: 16px;
+            height: 2px;
+        }
+    }
+
+    &__panel-body {
+        overflow: hidden;
+        transition: height $main-transition;
+        will-change: height;
+    }
+}

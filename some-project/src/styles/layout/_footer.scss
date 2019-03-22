@@ -1,0 +1,205 @@
+.site-footer {
+    grid-area: footer;
+    height: $footer-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: $footer-bg;
+    box-shadow: $footer-shadow;
+    font-size: 14px;
+    position: relative;
+    z-index: 30;
+
+    @include mq($until: tablet) {
+        height: auto;
+        padding: 0 32px;
+    }
+
+    @include mq($until: mobile) {
+        padding: 0 16px;
+    }
+
+    &__top,
+    &__bottom {
+        width: 100%;
+        max-width: 1430px;
+        margin: 0 auto;
+    }
+
+    &__top {
+        display: flex;
+        flex: 1;
+        padding: 32px;
+
+        @include mq($until: tablet) {
+            flex-direction: column;
+            padding: 32px 0;
+        }
+
+        @include mq($until: mobile) {
+            padding: 24px 0;
+        }
+    }
+
+    hr {
+        width: 100%;
+        height: 1px;
+        background-color: $ternary-color;
+        border: none;
+        margin: 32px 0;
+        display: none;
+
+        @include mq($from: mobile, $until: tablet) {
+            display: block;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+
+        @include mq($until: mobile) {
+            display: none;
+        }
+    }
+
+    &__titles,
+    &__menus {
+        display: grid;
+        grid-auto-columns: 180px;
+        grid-template-areas: "a a a";
+
+        @include mq($until: tablet) {
+            flex: 1;
+        }
+    }
+
+    &__titles {
+        line-height: 24px;
+    }
+
+    &__title {
+        font-weight: 700;
+        color: $primary-font-color;
+        text-transform: uppercase;
+        font-size: 16px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    &__menus {
+        .site-menu__item {
+            line-height: 24px;
+            white-space: nowrap;
+
+            @include after-first(1) {
+                margin-top: 8px;
+            }
+
+            @include last-child {
+                .site-submenu {
+                    top: -20px;
+
+                    &:before {
+                        top: 60px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__subscription {
+        max-width: 412px;
+        padding-left: 40px;
+
+        @include mq($until: tablet) {
+            max-width: initial;
+            padding-left: 0;
+
+            .loop-me-in__title {
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            button {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        height: 65px;
+        border-top: 1px solid $ternary-color;
+        padding: 0 32px;
+
+        @include mq($until: tablet) {
+            padding: 0;
+        }
+
+        @include mq($until: mobile) {
+            height: 53px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+        }
+    }
+
+    &__about-us,
+    &__logo-container,
+    &__social {
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
+
+    &__about-us {
+        text-transform: uppercase;
+
+        a {
+            color: $secondary-font-color;
+            margin-right: 16px;
+
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__logo-container {
+        justify-content: center;
+
+        img {
+            height: 32px;
+        }
+
+        @include mq($until: mobile) {
+            display: none;
+        }
+    }
+
+    &__social {
+        justify-content: flex-end;
+
+        a {
+            color: $lite-color;
+            margin: 0 10px;
+            font-size: 19px;
+            display: inline-flex;
+            align-items: center;
+
+            @include last-child {
+                margin-right: 0;
+            }
+
+            svg {
+                transition: all $main-transition;
+            }
+
+            &:hover {
+                color: $primary-font-color;
+            }
+        }
+    }
+}

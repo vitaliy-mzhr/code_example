@@ -1,0 +1,124 @@
+.dropdown-profile {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    z-index: 10;
+    width: 257px;
+    transition: opacity $main-transition;
+    opacity: 0;
+    pointer-events: none;
+    padding-top: calc(#{$header-height} + 8px);
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &__inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        background-color: white;
+        filter: drop-shadow(0 0px 6px rgba(0, 0, 0, .3));
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 5px;
+            bottom: 100%;
+            font-size: 14px;
+            border-width: 0 1em 1em 1em;
+            border-color: transparent transparent #fff transparent;
+            border-style: solid;
+            z-index: 10;
+        }
+    }
+
+    &__nav {
+        padding: 10px 20px;
+
+        a,
+        i {
+            color: $secondary-font-color;
+            display: block;
+            line-height: 30px;
+        }
+
+        a {
+            margin-left: 32px;
+
+            @include first-child {
+                margin-left: 0;
+            }
+
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__signout {
+        border-top: 1px dotted $lite-color;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 700;
+            line-height: 24px;
+            cursor: pointer;
+            color: $primary-font-color;
+        }
+
+        svg {
+            font-size: 20px;
+            margin-right: 4px;
+        }
+    }
+
+    .user-info {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        padding: 10px 20px;
+        grid-gap: 12px;
+        align-items: center;
+        color: $primary-font-color;
+        border-bottom: 1px solid $secondary-font-color;
+
+        &__avatar {
+            width: 56px;
+            height: 56px;
+            font-size: 42px;
+            color: $primary-font-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                @include imgCover;
+            }
+        }
+
+        &__data {
+            min-width: 0;
+        }
+
+        &__title,
+        &__name {
+            @include ellipsis;
+            line-height: 24px;
+        }
+
+        &__title {
+            font-weight: 700;
+        }
+    }
+}

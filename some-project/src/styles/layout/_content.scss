@@ -1,0 +1,57 @@
+#__next { /* stylelint-disable-line */
+    min-height: 100%;
+    //min-height: 100vh;
+    //overflow-y: auto;
+    display: grid;
+    grid-template-columns:
+        [col-1-start col-l-sidebar-start footer-start header-start col-start] auto
+        [col-1-end col-l-sidebar-end col-2-start] 1fr
+        [col-2-end col-r-sidebar-start col-3-start] auto
+        [col-3-end col-r-sidebar-end footer-end header-end col-end];
+    grid-template-rows:
+        [row-start row-1-start header-start] $header-height
+        [row-1-end row-2-start row-sidebar-start header-end row-content-start row-mob-sidebar-start] auto
+        [row-2-end row-3-start row-mob-content-start row-mob-sidebar-end] 1fr
+        [row-3-end row-4-start row-content-end row-sidebar-end footer-start row-mob-content-end] auto
+        [row-4-end footer-end row-end];
+}
+
+.page-content {
+    grid-column: col;
+    grid-row: row-content;
+
+    @at-root .left-sidebar + & {
+        background-color: $secondary-bg-color;
+
+        @include mq($from: mobile) {
+            grid-column-start: col-2-start;
+        }
+
+        @include mq($until: mobile) {
+            grid-row: row-mob-content;
+        }
+    }
+
+    @at-root .right-sidebar + & {
+        @include mq($from: mobile) {
+            grid-column-end: col-2-end;
+        }
+
+        @include mq($until: mobile) {
+            grid-row-end: -3;
+        }
+    }
+
+    @at-root .left-sidebar + .right-sidebar + & {
+        grid-column: col-2;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto minmax(0, $container-width) auto;
+
+    > * {
+        grid-column: 2 / 3;
+    }
+}

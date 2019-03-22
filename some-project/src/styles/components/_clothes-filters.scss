@@ -1,0 +1,148 @@
+.clothes-filters {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 16px;
+
+    @include mq($until: small) {
+        padding-right: 10px;
+    }
+
+    &__group {
+        display: inline-flex;
+        align-items: baseline;
+        user-select: none;
+        white-space: nowrap;
+        cursor: pointer;
+
+        @include after-first(1) {
+            margin-left: 10px;
+        }
+
+        &.is-active {
+            color: $primary-font-color;
+            font-weight: 700;
+
+            svg {
+                transform: rotate3d(0, 0, 1, 180deg);
+            }
+        }
+
+        svg {
+            font-size: 7px;
+            margin-left: 3px;
+            transition: transform $main-transition;
+        }
+
+        span {
+            span {
+                @include mq($until: wide) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: calc(100% - 1px);
+        right: 8px;
+        padding: 16px;
+        max-width: 416px;
+        background: white;
+        width: calc(100% - 8px * 2);
+        z-index: 10;
+        font-size: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
+        animation: fade-in $main-transition;
+
+        &--small {
+            max-width: 212px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__ranges {
+        border-bottom: 1px solid $lite-color;
+        padding-bottom: 12px;
+        display: grid;
+        grid-auto-columns: 1fr 1fr;
+        grid-auto-flow: column;
+        grid-gap: 16px;
+    }
+
+    &__range {
+        padding: 0 7px;
+        margin: 5px 0;
+    }
+
+    &__range-values {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__choices {
+        margin-top: 8px;
+    }
+
+    &__sort {
+        @include after-first(1) {
+            padding-top: 12px;
+            margin-top: 16px;
+            border-top: 1px solid $lite-color;
+        }
+
+        .radio {
+            margin-top: 12px;
+        }
+    }
+
+    &__choices-list {
+        margin-top: 6px;
+        max-height: 80px;
+        overflow-y: auto;
+    }
+
+    &__search {
+        position: relative;
+        height: 35px;
+        margin-top: 8px;
+
+        svg {
+            color: $lite-color;
+        }
+
+        input {
+            padding: 0 28px 0 30px;
+            border-color: $lite-color;
+        }
+    }
+
+    &__search-label {
+        @include absoluteCenter;
+        font-size: 17px;
+        right: auto;
+        left: 8px;
+    }
+
+    &__search-clear {
+        @include absoluteCenter;
+        font-size: 12px;
+        left: auto;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .choice {
+        min-height: 24px;
+    }
+}

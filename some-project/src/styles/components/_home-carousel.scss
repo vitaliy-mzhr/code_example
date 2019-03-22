@@ -1,0 +1,112 @@
+.home-carousel {
+    min-height: calc(100vh - #{$header-height});
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, $container-width) auto;
+    grid-template-rows: 1fr;
+    pointer-events: none;
+    margin-top: 16px;
+
+    &.is-entered {
+        animation: slide-up .6s cubic-bezier(0, 0, .3, 1) forwards;
+        pointer-events: auto;
+    }
+
+    &__content {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        z-index: 10;
+        align-self: center;
+        background-color: rgba(0, 0, 0, .5);
+        max-width: 384px;
+        padding: 32px;
+
+        @include mq($until: wide) {
+            margin: 0 32px;
+        }
+
+        @include mq($until: mobile) {
+            margin: 0 16px;
+            padding: 15px;
+        }
+
+        @include mq($until: small) {
+            margin: 0 10px;
+        }
+
+        .site-menu {
+            .site-menu__item {
+                margin: 0;
+
+                &.is-active {
+                    @include mq($until: small) {
+                        transform: translate3d(10px, 0, 0);
+                    }
+                }
+            }
+
+            > .site-menu__item {
+                font-size: 16px;
+                color: #fff;
+                line-height: 40px;
+
+                @include mq($until: small) {
+                    line-height: 30px;
+                    font-size: 14px;
+                }
+            }
+
+            &:not(.is-activated-by-ai) {
+                > .site-menu__item {
+                    &.is-active {
+                        @include mq($until: small) {
+                            > span {
+                                @include ellipsis(65px);
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .site-submenu {
+                top: 20px;
+
+                @include mq($until: small) {
+                    max-width: 190px;
+                    width: 100vw;
+                    white-space: normal;
+                    top: 15px;
+                    left: 65px;
+                }
+
+                .site-menu__item {
+                    color: $secondary-font-color;
+                    padding: 5px 0;
+
+                    @include mq($until: small) {
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        z-index: 0;
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 36px;
+        margin: 0 0 16px;
+        color: #fff;
+
+        @include mq($until: tablet) {
+            font-size: 22px;
+            line-height: 33px;
+        }
+    }
+}

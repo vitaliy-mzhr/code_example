@@ -1,0 +1,25 @@
+.site-logo {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 0 16px;
+
+        @include mq($until: mobile) {
+            grid-column: nav;
+            padding: 0 20px;
+            justify-content: center;
+        }
+
+        img {
+            height: 32px;
+            width: auto;
+
+            @include mq($until: mobile) {
+                height: auto;
+                width: 100%;
+                max-width: 172px;
+            }
+        }
+    }
+}

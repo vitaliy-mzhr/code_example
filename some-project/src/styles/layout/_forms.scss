@@ -1,0 +1,61 @@
+input,
+select,
+option {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 0;
+    padding: 0 12px;
+    height: 100%;
+    width: 100%;
+    color: $secondary-font-color;
+    border: 1px solid $ternary-color;
+    background-color: white;
+    touch-action: manipulation;
+    background-image: none;
+    box-shadow: none;
+    outline: none;
+    appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        border: 1px solid $lite-color;
+    }
+}
+
+input[type="range"] {
+    appearance: slider-horizontal;
+}
+
+select {
+    background: url('/static/images/dropdown-arrow.svg') no-repeat right white;
+    background-position: right 8px bottom calc(50% - 1px);
+    background-size: 12px;
+}
+
+input,
+select {
+    &.is-invalid {
+        color: $input-error-color;
+    }
+}
+
+.flex-form-row {
+    display: flex;
+    width: 100%;
+
+    @include after-first(1) {
+        margin-top: 16px;
+    }
+
+    > * {
+        width: 100%;
+
+        @include after-first(1) {
+            margin-left: 16px;
+        }
+    }
+}

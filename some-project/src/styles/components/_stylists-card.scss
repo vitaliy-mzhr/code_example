@@ -1,0 +1,151 @@
+.stylists-card {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+
+    &__cover {
+        @include imgCover;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        opacity: 0;
+        transition: opacity $main-transition;
+        filter: drop-shadow(0 0 8px #000);
+        color: #fff;
+        font-size: 13px;
+        pointer-events: none;
+        z-index: 10;
+
+        @include onTouchDevices {
+            display: none;
+        }
+
+        svg {
+            font-size: 16px;
+            margin-right: 8px;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+
+            @include after-first(1) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            div {
+                @include after-first(1) {
+                    display: flex;
+                }
+
+                @include first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        @include onMouseDevices {
+            .stylists-card__btn {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .stylists-card__more-info {
+                max-height: 120px;
+                transition-duration: 2s;
+            }
+        }
+    }
+
+    &.is-active {
+        @include onTouchDevices {
+            .stylists-card__more-info {
+                max-height: 120px;
+                transition-duration: .7s;
+            }
+        }
+    }
+
+    &__details {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        position: absolute;
+        bottom: 0;
+        padding: 16px 8px;
+        color: white;
+        width: 100%;
+        text-align: center;
+        text-shadow: 0 0 16px rgba(0, 0, 0, .8);
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 20px;
+        margin-bottom: 2px;
+        overflow-wrap: break-word;
+    }
+
+    &__desc {
+        line-height: 1.2;
+        padding: 0 8px;
+        font-size: 14px;
+        margin-top: 2px;
+        overflow-wrap: break-word;
+    }
+
+    &__link {
+        display: none;
+        border-radius: 5px;
+        padding: 0 8px;
+        margin-top: 8px;
+        font-style: italic;
+        font-weight: 400;
+        width: auto;
+        background: rgba(255, 255, 255, .8);
+        text-shadow: none;
+        transition: none;
+        border: none;
+        color: $secondary-font-color;
+
+        &:hover,
+        &:active {
+            color: $secondary-font-color;
+            background-color: rgba(255, 255, 255, .8);
+            cursor: pointer;
+            box-shadow: none;
+            outline: none;
+            text-decoration: none;
+        }
+
+        svg {
+            margin-right: 8px;
+        }
+
+        @include onTouchDevices {
+            display: inline-flex;
+        }
+    }
+
+    &__more-info {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $main-transition;
+        transition-duration: .7s;
+        will-change: max-height;
+
+        @include onTouchDevices {
+            transition-duration: .4s;
+        }
+    }
+}

@@ -1,0 +1,148 @@
+.sidebar-tabs {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    .tabs {
+        &__names {
+            padding-left: 16px;
+            background-color: #f7f6f6;
+
+            @include mq($until: small) {
+                padding: 0 10px;
+            }
+        }
+
+        &__filters {
+            &:not(:empty) {
+                background-color: #f7f6f6;
+                width: 100%;
+                align-items: stretch;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        &__subheader {
+            justify-content: center;
+            padding: 0 16px;
+
+            @include mq($until: small) {
+                padding: 0 10px;
+                justify-content: flex-end;
+            }
+
+            @include mq($from: mobile, $until: wide) {
+                padding: 0 16px;
+                justify-content: flex-end;
+            }
+        }
+
+        &__name {
+            transition: color .2s linear;
+            opacity: 0;
+            animation: fade-in $main-transition forwards;
+
+            @include mq($until: small) {
+                font-size: 14px;
+            }
+
+            svg {
+                &.is-rotated {
+                    transform: rotate(.75turn);
+                }
+            }
+
+            > span {
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-size: 10px;
+                    margin-left: 4px;
+                }
+            }
+        }
+
+        &__content {
+            @include stretch;
+            opacity: 0;
+            animation: fade-in $main-transition forwards;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+
+            .tabs__name {
+                font-size: 14px;
+                text-transform: none;
+
+                @include after-first(1) {
+                    margin-left: 12px;
+
+                    @include mq($until: small) {
+                        margin-left: 10px;
+                    }
+                }
+
+                > span {
+                    display: none;
+                    opacity: 0;
+                    margin-left: 5px;
+                    animation: fade-in $main-transition forwards;
+                }
+
+                @include onMouseDevices {
+                    &:hover {
+                        color: $secondary-font-color;
+                    }
+                }
+
+                &.is-active {
+                    color: $secondary-font-color;
+
+                    > span {
+                        display: inline;
+
+                        @include mq($until: small) {
+                            position: absolute;
+                            left: 10px;
+                            top: calc(100% + 11px);
+                            margin-left: 0;
+                        }
+
+                        @include mq($from: mobile, $until: wide) {
+                            position: absolute;
+                            left: 16px;
+                            top: calc(100% + 11px);
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                .tabs__name-underline {
+                    &:after {
+                        background-color: $secondary-font-color;
+                    }
+                }
+
+                img {
+                    height: 1.1em;
+                }
+            }
+
+            .tabs__names,
+            .tabs__filters {
+                border-top: none;
+                background-color: transparent;
+            }
+
+            .tabs__names {
+                @include mq($until: small) {
+                    padding-right: 0;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}

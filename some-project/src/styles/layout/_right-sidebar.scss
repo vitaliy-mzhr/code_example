@@ -1,0 +1,17 @@
+.right-sidebar {
+    grid-row: row-sidebar;
+    grid-column: col-r-sidebar;
+    overflow: hidden;
+    height: 100%;
+    border-left: 1px solid $secondary-font-color;
+
+    @include mq($until: mobile) {
+        width: 100%;
+        grid-column: col;
+        grid-row: row-mob-sidebar-start / -1;
+        pointer-events: none;
+        border-left: none;
+        z-index: 10;
+        position: relative;
+    }
+}

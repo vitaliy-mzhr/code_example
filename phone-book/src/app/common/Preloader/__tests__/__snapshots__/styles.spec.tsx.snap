@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PreloadertStyles applied correctly 1`] = `
+.c0 {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 4.5rem);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media all and (max-width:768px) {
+  .c0 {
+    height: calc(100% - 4.05rem);
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

@@ -1,0 +1,69 @@
+.rc-collapse {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+
+    > .rc-collapse-item {
+        border-color: rgba(96, 96, 96, .4);
+
+        &.rc-collapse-item-active {
+            > .rc-collapse-header {
+                &:before {
+                    transform: scaleY(0) translateX(-7px);
+                }
+            }
+        }
+
+        > .rc-collapse-header {
+            @include ellipsis;
+            font-weight: 700;
+            height: 40px;
+            align-items: center;
+            position: relative;
+            padding: 0 20px 0 0;
+            font-size: $base-font-size;
+            color: $secondary-font-color;
+
+            .arrow {
+                display: none;
+            }
+
+            &:focus {
+                box-shadow: none;
+                border: none;
+                outline: none;
+            }
+
+            &:before,
+            &:after {
+                @include absoluteCenter;
+                content: '';
+                background-color: currentColor;
+                left: auto;
+            }
+
+            &:before {
+                transition: transform $main-transition;
+                transform: scaleY(1) translateX(-7px);
+                height: 14px;
+                width: 2px;
+                will-change: transform;
+            }
+
+            &:after {
+                width: 16px;
+                height: 2px;
+            }
+        }
+    }
+
+    &-content {
+        color: $secondary-font-color;
+        padding: 0;
+        background-color: transparent;
+
+        > .rc-collapse-content-box {
+            margin: 0;
+        }
+    }
+}

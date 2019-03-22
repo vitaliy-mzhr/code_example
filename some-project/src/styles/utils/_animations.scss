@@ -1,0 +1,170 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-from-bottom-sm {
+    from {
+        transform: translate3d(0, 8px, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-from-bottom-2 {
+    0% {
+        transform: translate3d(0, 60px, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translate3d(0, 40px, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translate3d(0, -2px, 0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate3d(0, 4px, 0);
+    }
+
+    70% {
+        transform: translate3d(0, -2px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slide-saved {
+    0% {
+        transform: translate3d(0, 8px, 0);
+        opacity: 0;
+    }
+
+    11% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-from-top {
+    0% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes wobble-hor-top {
+    0% {
+        transform: rotate(.4turn);
+    }
+
+    10% {
+        transform: rotate(-.28turn);
+    }
+
+    20% {
+        transform: rotate(.16turn);
+    }
+
+    30% {
+        transform: rotate(-.11turn);
+    }
+
+    40% {
+        transform: rotate(.08turn);
+    }
+
+    50% {
+        transform: rotate(-.05turn);
+    }
+
+    60% {
+        transform: rotate(.03turn);
+    }
+
+    70% {
+        transform: rotate(-.01turn);
+    }
+
+    80% {
+        transform: rotate(.019turn);
+    }
+
+    90% {
+        transform: rotate(-.006turn);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+
+    70% {
+        transform: scale3d(.8, .8, 1);
+    }
+
+    80% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+
+    90% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

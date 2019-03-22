@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home container test ConnectedHomeContainer should renders without crashing with initial state 1`] = `
+<HomeContainer
+  contacts={Array []}
+  deleteContact={[Function]}
+  error={null}
+  fetchContacts={[Function]}
+  isLoading={false}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  toggleContact={[Function]}
+/>
+`;
+
+exports[`Home container test HomeContainer should renders with error 1`] = `
+<ErrorPage
+  error="error"
+/>
+`;
+
+exports[`Home container test HomeContainer should renders without crashing with contacts 1`] = `
+<Home
+  contacts={
+    Array [
+      Object {
+        "expanded": false,
+        "id": 1,
+        "name": Object {
+          "first": "man",
+          "last": "awesome",
+        },
+        "phone": Array [],
+      },
+      Object {
+        "expanded": false,
+        "id": 2,
+        "name": Object {
+          "first": "man",
+          "last": "awesome",
+        },
+        "phone": Array [],
+      },
+    ]
+  }
+  deleteContact={[MockFunction]}
+  isLoading={false}
+  toggleContact={[MockFunction]}
+/>
+`;
+
+exports[`Home container test HomeContainer should renders without crashing with initial state 1`] = `
+<Home
+  contacts={Array []}
+  deleteContact={[MockFunction]}
+  isLoading={false}
+  toggleContact={[MockFunction]}
+/>
+`;

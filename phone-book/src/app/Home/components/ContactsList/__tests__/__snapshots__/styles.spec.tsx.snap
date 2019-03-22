@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactsListStyles applied correctly 1`] = `
+.c0 {
+  width: 100%;
+  max-width: 26.25rem;
+  margin: 2rem auto;
+}
+
+@media all and (max-width:768px) {
+  .c0 {
+    max-width: 21rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

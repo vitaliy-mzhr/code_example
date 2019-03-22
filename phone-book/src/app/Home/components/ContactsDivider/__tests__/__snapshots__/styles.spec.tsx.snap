@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactsDividerStyles applied correctly 1`] = `
+.c0 .divider {
+  padding: .5rem;
+  margin-bottom: .25rem;
+  background-color: #eee;
+}
+
+.c0 .title {
+  text-align: center;
+}
+
+<div
+  className="c0"
+/>
+`;

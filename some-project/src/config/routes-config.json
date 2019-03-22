@@ -1,0 +1,77 @@
+{
+    "INDEX": {
+        "name": "index",
+        "pattern": "/",
+        "page": "index"
+    },
+    "ABOUT_US": {
+        "name": "about",
+        "pattern": "/about-us",
+        "page": "about"
+    },
+    "SIGNIN": {
+        "name": "signin",
+        "pattern": "/signin",
+        "page": "signin"
+    },
+    "SIGNUP": {
+        "name": "signup",
+        "pattern": "/signup",
+        "page": "signup"
+    },
+    "CATEGORY": {
+        "name": "category",
+        "pattern": "/:type(styles|occasions)/:id",
+        "page": "category"
+    },
+    "STYLISTS": {
+        "name": "stylists",
+        "pattern": "/stylists",
+        "page": "stylists"
+    },
+    "CATEGORY_COLLECTION": {
+        "name": "categoryCollection",
+        "pattern": "/collections/:collectionSlug",
+        "page": "categoryCollection"
+    },
+    "STYLIST_COLLECTION": {
+        "name": "stylistCollection",
+        "pattern": "/stylists/:stylistSlug",
+        "page": "stylistCollection"
+    },
+    "CLOTHES_COLLECTION": {
+        "name": "clothesCollection",
+        "pattern": "/clothes/:clothesSlug1/:clothesSlug2",
+        "page": "clothesCollection"
+    },
+    "OUTFIT": {
+        "name": "outfit",
+        "pattern": "/outfit/:outfitId",
+        "page": "outfit"
+    },
+    "MY_INFO": {
+        "name": "myinfo",
+        "pattern": "/my-info",
+        "page": "myinfo"
+    },
+    "MY_COLLECTIONS": {
+        "name": "mycollections",
+        "pattern": "/my-collections",
+        "page": "mycollections"
+    },
+    "MY_STYLISTS": {
+        "name": "mystylists",
+        "pattern": "/my-stylists",
+        "page": "mystylists"
+    },
+    "MY_OUTFITS": {
+        "name": "myoutfits",
+        "pattern": "/my-outfits",
+        "page": "myoutfits"
+    },
+    "MY_CLOTHES": {
+        "name": "myclothes",
+        "pattern": "/my-clothes",
+        "page": "myclothes"
+    }
+}

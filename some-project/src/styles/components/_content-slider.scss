@@ -1,0 +1,95 @@
+.content-slider {
+    width: 100%;
+    position: relative;
+
+    &__inner {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &__next-btn,
+    &__prev-btn {
+        @include stretch;
+        font-size: 15px;
+        color: #333;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 96px;
+        cursor: pointer;
+        transition: opacity $main-transition;
+        -webkit-tap-highlight-color: transparent;
+
+        &:not(.is-hidden) {
+            opacity: 1;
+        }
+
+        svg {
+            opacity: .7;
+            transition: opacity $main-transition;
+        }
+
+        @include onMouseDevices {
+            &:hover {
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+
+        @include mq($until: mobile) {
+            pointer-events: none;
+            width: 40px;
+            padding: 0;
+
+            svg {
+                display: none;
+            }
+        }
+
+        &.is-hidden {
+            pointer-events: none;
+            transition-duration: .15s;
+            opacity: 0;
+        }
+    }
+
+    &__prev-btn {
+        right: auto;
+        padding-right: 30px;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
+
+        @include mq($until: mobile) {
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7));
+        }
+
+        svg {
+            align-self: flex-start;
+            transform: rotate(.25turn);
+        }
+    }
+
+    &__next-btn {
+        padding-left: 30px;
+        left: auto;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .8));
+
+        @include mq($until: mobile) {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7));
+        }
+
+        svg {
+            align-self: flex-end;
+            transform: rotate(-.25turn);
+        }
+    }
+}

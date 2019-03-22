@@ -1,0 +1,49 @@
+.my-clothes {
+    &__group-collection {
+        padding: 0;
+    }
+
+    &__group-btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__group-btn {
+        margin-top: 15px;
+        width: 130px;
+    }
+
+    .my-library__group-list {
+        grid-auto-rows: $clothe-item-height;
+
+        &.is-horizontal {
+            padding-bottom: 26px;
+            grid-auto-columns: 185px;
+
+            @include onTouchDevices {
+                grid-auto-rows: $clothe-item-height + $clothe-item-btn-height;
+                padding-bottom: 0;
+            }
+        }
+
+        &.is-vertical {
+            grid-gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax($clothe-item-width, 1fr));
+            grid-auto-flow: row;
+
+            @include onTouchDevices {
+                grid-auto-rows: $clothe-item-height + $clothe-item-btn-height;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .content-slider__next-btn,
+    .content-slider__prev-btn {
+        z-index: 10;
+
+        @include onMouseDevices {
+            bottom: 26px;
+        }
+    }
+}

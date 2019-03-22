@@ -1,0 +1,152 @@
+.left-sidebar {
+    grid-row: row-sidebar;
+    grid-column: col-l-sidebar;
+    width: $left-sidebar-width;
+    padding: 16px 0 16px 16px;
+    background-color: $secondary-bg-color;
+    min-height: calc(100vh - #{$header-height});
+    height: 100%;
+
+    @include mq($until: mobile) {
+        grid-row: row-mob-sidebar;
+        grid-column: col;
+        width: 100%;
+        padding: 0;
+        min-height: 0;
+        height: auto;
+        z-index: 30;
+    }
+
+    &__inner {
+        position: sticky;
+        background-color: $primary-bg-color;
+        top: calc(#{$header-height} + 16px);
+        height: 100%;
+        max-height: calc(100vh - (#{$header-height} + 16px * 2));
+        box-shadow: 0 0 10px rgba(0, 0, 0, .34);
+        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+
+        @include mq($until: mobile) {
+            position: static;
+            box-shadow: none;
+            height: auto;
+            max-height: none;
+            display: block;
+        }
+    }
+
+    hr {
+        width: 110px;
+        border: none;
+        height: 1px;
+        margin: 24px auto;
+        border-bottom: 1.5px solid $primary-font-color;
+    }
+
+    &__cta-btn {
+        border-radius: 20px;
+        width: auto;
+        padding: 2px 12px 2px 16px;
+        height: auto;
+        min-height: 34px;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 16px 0;
+        white-space: normal;
+
+        @include mq($until: mobile) {
+            margin: 4px 0;
+        }
+
+        span {
+            @include first-child {
+                margin-right: 5px;
+            }
+        }
+
+        svg {
+            font-size: 7px;
+            margin-right: 5px;
+            transition: transform $main-transition;
+
+            @include mq($from: mobile) {
+                transform: rotate(.75turn);
+            }
+        }
+
+        &:hover {
+            color: $button-primary-color-a;
+            background-color: $button-primary-bg-a;
+
+            svg {
+                @include mq($from: mobile) {
+                    transform: translateX(8px) rotate(.75turn);
+                }
+            }
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding: 0 16px;
+    }
+
+    &__desc {
+        text-align: justify;
+        font-size: 14px;
+        line-height: 1.2;
+
+        @include mq($until: mobile) {
+            padding-bottom: 8px;
+        }
+    }
+
+    &__footer {
+        padding: 16px;
+
+        @include mq($until: mobile) {
+            display: none;
+        }
+
+        .btn {
+            span {
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            svg {
+                font-size: 20px;
+                margin-right: 12px;
+            }
+        }
+    }
+
+    &__followers {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 24px;
+        font-size: 14px;
+
+        a {
+            color: inherit;
+            font-size: 18px;
+            display: flex;
+            margin-right: 10px;
+        }
+    }
+
+    &__stylist-img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 12px;
+        position: relative;
+
+        img {
+            @include imgCover;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.auth-modal {
+    &__header {
+        h2 {
+            text-transform: none;
+            margin: 0;
+            font-size: inherit;
+            line-height: 1.5em;
+
+            @include mq($until: small) {
+                line-height: 1.1em;
+            }
+        }
+
+        p {
+            margin: 0;
+            font-weight: 400;
+            font-size: $base-font-size;
+            color: $secondary-font-color;
+
+            @include mq($until: small) {
+                font-size: 12px;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+
+        @include mq($until: mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__footer {
+        line-height: 23px;
+
+        @include mq($until: small) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        p {
+            color: $lite-color;
+            font-size: 14px;
+            margin: 0;
+
+            @include mq($until: small) {
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+    }
+
+    &__footer-link {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 8px;
+
+        &:hover {
+            .auth-page__arrow-icon {
+                transform: translate3d(4px, 0, 0) rotate(.75turn);
+            }
+        }
+    }
+
+    &__arrow-icon {
+        font-size: 6px;
+        margin-left: 3px;
+        transition: transform $main-transition;
+        transform: rotate(.75turn);
+    }
+}

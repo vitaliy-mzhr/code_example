@@ -1,0 +1,11 @@
+.my-stylists {
+    .my-library__group-list {
+        grid-template-rows: 250px;
+        grid-auto-columns: 300px;
+
+        @include mq($until: mobile) {
+            grid-template-rows: 200px;
+            grid-auto-columns: 240px;
+        }
+    }
+}
